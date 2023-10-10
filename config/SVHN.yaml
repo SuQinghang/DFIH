@@ -1,0 +1,49 @@
+dataset: svhn
+root: /data2/suqinghang/Dataset/SVHN
+img_size: 224
+num_classes: 10
+is_multilabel: false
+is_original: true
+start_session: 1
+total_session: 2
+initial_path: ~
+num_class_list: [5, 5]
+
+arch: alexnet
+code_length: 32
+batch_size: 64
+num_works: 8
+
+method: dfih
+
+lambda_kd: 0.1
+#* select kd method
+lwf: 0
+mmd: 0
+lwm: 0
+cvs: 0
+code_consistency: 1
+
+#* param of DFIH 
+AIM: 0
+APM: 0
+omega: 100
+sigma: 0.75
+div: 4
+memory: 0
+
+method_parameters:
+  dfih:
+    max_iters: 100
+    lambda_p: 1
+    lambda_proxy: 0.01
+    lambda_q: 0.1
+
+lr: 1.0e-4
+
+seed: ~
+topk: ~
+save_checkpoint: false
+
+gpu: 0
+project: Test
